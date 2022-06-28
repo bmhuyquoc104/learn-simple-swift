@@ -143,3 +143,20 @@ var data:String? = "huy"
 
 // data2 can store a string or nil, but it is already unwrapped
 var data2:String! = "huy"
+
+// Array
+var animals:[String] = []
+
+animals.append("cat")
+
+animals.insert("dog", at: 0)
+
+animals += ["pony","fox","leo"]
+
+animals.remove(at: 2)
+
+for animal in animals {
+    print(animal)
+}
+
+print(animals.joined(separator: ","))
