@@ -64,3 +64,6 @@ print(greeting)
 
 let 🐃 = "chow"
 print(🐃)
+
+let name2 = "huy"
+print(name2)
