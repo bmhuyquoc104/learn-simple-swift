@@ -1,8 +1,6 @@
  import UIKit
-
+//Data type
 var name = "huy ne"
-
-print(name)
 
 var age:Int = 20;
 
@@ -12,7 +10,7 @@ var isLearning:Bool = false;
 
 var currency:Float = 20.5;
 
-
+//if else
 if (isLearning) {
     print("Huy is learning")
 }
@@ -22,6 +20,7 @@ else{
 
 age = 30
 
+//Switch
 switch age {
 case 30:
     print("You are an adult")
@@ -29,12 +28,14 @@ default:
     print("You are not an adult")
 }
 
+//For loop
 for i in 1...5 {
     print("I love you \(i) times")
 }
 
 print("Huy is \(age) years old")
 
+//Functions
 func addNumbers (a:Int,b:Int) -> Int {
     return a+b
 }
@@ -65,5 +66,80 @@ print(greeting)
 let 🐃 = "chow"
 print(🐃)
 
-let name2 = "huy"
-print(name2)
+
+
+// Class
+class Employee {
+    var name = ""
+    var age = 0
+    var salary = 0
+    var role = ""
+    func greeting() {
+        print("Hi my name is \(name)")
+    }
+}
+
+let employee:Employee = Employee()
+employee.name = "huy"
+print(employee.name)
+employee.greeting()
+
+// Sub class
+class Person {
+    var name = ""
+    var age = 0
+}
+
+class Student:Person {
+    var course = ""
+    var tutitionFee = 0
+    func attend () {
+        print("\(name) is attednding \(course) ")
+    }
+}
+
+class Teacher:Person {
+    var courses = [String]()
+    func teach(){
+        print("\(name) is teaching \(courses.joined(separator:(" ,")))")
+    }
+}
+
+let studentA:Student = Student()
+studentA.name = "huy";
+studentA.course = "IOS"
+studentA.attend()
+
+let teacherA:Teacher = Teacher()
+teacherA.name = "Sir";
+teacherA.courses = ["IOS","Design3","Embed3"];
+teacherA.teach();
+
+// Init
+class Character {
+    var name = "";
+    var role = "";
+    init(_ name:String,_ role:String){
+        self.name = name;
+        self.role = role;
+    }
+}
+
+let shinichi:Character = Character("shinichi","propagonist")
+print(shinichi.name)
+
+//Optional
+class XmasGift {
+    func surprise(){
+        print(Int.random(in: 1...5))
+    }
+}
+
+let gift:XmasGift? = XmasGift()
+gift?.surprise()
+
+//data can store a string or nil, but it is wrapped
+var data:String? = "huy"
+
+// data2 can store a string or nil, but it is already unwrapped
+var data2:String! = "huy"
